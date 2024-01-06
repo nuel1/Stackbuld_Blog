@@ -9,6 +9,9 @@ import { BlogFormComponent } from './components/blog-form/blog-form.component';
 import { LargeModalComponent } from './components/modal/large-modal/large-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { SearchComponent } from './components/search/search.component';
+import { DeleteModalComponent } from './components/modal/delete-modal/delete-modal.component';
+import { SmallModalComponent } from './components/modal/small-modal/small-modal.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     FooterComponent,
     BlogCardComponent,
     LargeModalComponent,
+    SearchComponent,
+    DeleteModalComponent,
+    SmallModalComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +38,9 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     BlogCardComponent,
     BlogFormComponent,
     LargeModalComponent,
+    SearchComponent,
+    DeleteModalComponent,
+    SmallModalComponent,
   ],
 })
 export class SharedModule {}

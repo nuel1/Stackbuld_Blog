@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './large-modal.component.scss',
 })
 export class LargeModalComponent {
-  @Input({ required: true }) title = '';
+  @Input() title = '';
   @Input({ required: true }) id = '';
 }

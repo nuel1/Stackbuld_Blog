@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-small-modal',
-  standalone: true,
-  imports: [],
+  selector: 'small-modal',
   templateUrl: './small-modal.component.html',
-  styleUrl: './small-modal.component.scss'
+  styleUrl: './small-modal.component.scss',
 })
 export class SmallModalComponent {
-
+  @Input() title = '';
+  @Input({ required: true }) id = '';
 }

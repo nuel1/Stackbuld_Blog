@@ -5,13 +5,13 @@
         >Upload blog cover <span class="text-danger fw-bold">*</span></label
       >
       <div
-        class="border position-relative d-flex flex-column"
+        class="border position-relative d-flex flex-column rounded"
         style="height: 200px; place-content: center; place-items: center"
         [style]="{ 'background-image': uploadedImage }"
       >
         <!-- <no-content></no-content> -->
         <p class="text-center">No Image</p>
-        <button class="btn btn-primary">
+        <button class="btn text-white" style="background: rgb(64, 93, 243)">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -36,16 +36,34 @@
       <label for="author" class="mb-2"
         >Your name <span class="text-danger fw-bold">*</span></label
       >
-      <input class="form-control form-control-lg" />
+      <input class="form-control form-control-lg" style="font-size: 1rem" />
     </div>
     <div class="mt-4">
-      <label for="author" class="mb-2"
+      <label for="title" class="mb-2"
+        >Title <span class="text-danger fw-bold">*</span></label
+      >
+      <input class="form-control form-control-lg" style="font-size: 1rem" />
+    </div>
+    <div class="mt-4">
+      <label for="content" class="mb-2"
         >What's new <span class="text-danger fw-bold">*</span></label
       >
       <angular-editor
         [placeholder]="'Enter text here...'"
         [config]="editorConfig"
       ></angular-editor>
+    </div>
+    <div class="mt-4">
+      <button
+        class="btn btn-lg text-white"
+        style="
+          font-size: 0.9rem;
+          background: rgb(64, 93, 243);
+          font-weight: 500;
+        "
+      >
+        Create Blog
+      </button>
     </div>
   </div>
 </form>
