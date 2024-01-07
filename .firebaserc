@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "blog-14d0d": {
+      "hosting": {
+        "project-blog": [
+          "blog-14d0d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "blog-14d0d"
+  }
+}

@@ -103,7 +103,12 @@
 <!-- <template #form> -->
 <large-modal id="create-blog" title="Create Blog">
   <div class="body">
-    <blog-form body></blog-form>
+    <blog-form
+      body
+      [uploadedImageURL]="sharedService.imageURL"
+      (onUploadFile)="sharedService.uploadFile($event)"
+      (onRemoveCover)="sharedService.imageURL = $event"
+    ></blog-form>
   </div>
 </large-modal>
 
