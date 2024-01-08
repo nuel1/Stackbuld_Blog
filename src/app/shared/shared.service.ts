@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Injectable, inject } from '@angular/core';
-import { enviroment } from '../enviroment';
 import { Blog } from '../model/blog';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class SharedService {
@@ -18,10 +18,10 @@ export class SharedService {
     try {
       const formData = new FormData();
       formData.append('file', file);
-      formData.append('upload_preset', enviroment.cloudinary.upload_preset);
+      formData.append('upload_preset', environment.cloudinary.upload_preset);
 
       const { url } = (await this.http
-        .post(enviroment.cloudinary.url, formData)
+        .post(environment.cloudinary.url, formData)
         .toPromise()) as {
         url: string;
       };

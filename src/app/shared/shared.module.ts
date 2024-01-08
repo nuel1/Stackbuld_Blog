@@ -13,9 +13,9 @@ import { SearchComponent } from './components/search/search.component';
 import { DeleteModalComponent } from './components/modal/delete-modal/delete-modal.component';
 import { SmallModalComponent } from './components/modal/small-modal/small-modal.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { enviroment } from '../enviroment';
 import { TimeagoModule } from 'ngx-timeago';
 import { LoaderComponent } from './components/loader/loader.component';
+import { environment } from '../../environments/environment';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { LoaderComponent } from './components/loader/loader.component';
   ],
   providers: [
     SharedService,
-    { provide: FIREBASE_OPTIONS, useValue: enviroment.firebase },
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
   ],
   exports: [
     HeaderComponent,

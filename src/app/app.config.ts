@@ -20,10 +20,10 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getMessaging, provideMessaging } from '@angular/fire/messaging';
 import { getPerformance, providePerformance } from '@angular/fire/performance';
-import { enviroment } from './enviroment';
 import { provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -33,7 +33,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     importProvidersFrom(
-      provideFirebaseApp(() => initializeApp(enviroment.firebase))
+      provideFirebaseApp(() => initializeApp(environment.firebase))
     ),
     // importProvidersFrom(provideAuth(() => getAuth())),
     // importProvidersFrom(provideAnalytics(() => getAnalytics())),

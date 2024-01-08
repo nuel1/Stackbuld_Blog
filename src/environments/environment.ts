@@ -1,4 +1,5 @@
-export const enviroment = {
+export const environment = {
+  production: true,
   cloudinary: {
     url: 'https://api.cloudinary.com/v1_1/da1feyqhg/image/upload',
     upload_preset: 'ee9mn7cq',
