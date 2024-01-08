@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { Blog } from '../../../model/blog';
 
 @Component({
   selector: 'blog-form',
@@ -21,6 +22,7 @@ export class BlogFormComponent implements OnChanges {
   @Input() uploadedImageURL = '';
   @Output() onUploadFile: EventEmitter<File> = new EventEmitter();
   @Output() onRemoveCover: EventEmitter<string> = new EventEmitter();
+  @Output() onSubmit: EventEmitter<Blog> = new EventEmitter();
 
   form = this.formBuilder.group({
     cover: ['', Validators.required],
@@ -80,6 +82,6 @@ export class BlogFormComponent implements OnChanges {
   }
 
   submit() {
-    console.log(this.form.value);
+    this.onSubmit.emit(this.form.value as Blog);
   }
 }

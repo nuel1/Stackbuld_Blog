@@ -21,16 +21,20 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getMessaging, provideMessaging } from '@angular/fire/messaging';
 import { getPerformance, providePerformance } from '@angular/fire/performance';
 import { enviroment } from './enviroment';
+import { provideToastr } from 'ngx-toastr';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideAnimations(),
+    provideToastr(),
     provideRouter(routes),
     provideClientHydration(),
     importProvidersFrom(
       provideFirebaseApp(() => initializeApp(enviroment.firebase))
     ),
-    importProvidersFrom(provideAuth(() => getAuth())),
-    importProvidersFrom(provideAnalytics(() => getAnalytics())),
+    // importProvidersFrom(provideAuth(() => getAuth())),
+    // importProvidersFrom(provideAnalytics(() => getAnalytics())),
     ScreenTrackingService,
     UserTrackingService,
     // importProvidersFrom(
@@ -45,8 +49,8 @@ export const appConfig: ApplicationConfig = {
     //   })
     // ),
     importProvidersFrom(provideFirestore(() => getFirestore())),
-    importProvidersFrom(provideDatabase(() => getDatabase())),
-    importProvidersFrom(provideMessaging(() => getMessaging())),
-    importProvidersFrom(providePerformance(() => getPerformance())),
+    // importProvidersFrom(provideDatabase(() => getDatabase())),
+    // importProvidersFrom(provideMessaging(() => getMessaging())),
+    // importProvidersFrom(providePerformance(() => getPerformance())),
   ],
 };

@@ -1,7 +1,8 @@
 export interface Blog {
-  id: string;
+  id?: string;
   cover: string;
   title: string;
   author: string;
   content: string;
+  date: string | number;
 }

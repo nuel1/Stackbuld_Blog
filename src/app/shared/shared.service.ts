@@ -3,11 +3,13 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Injectable, inject } from '@angular/core';
 import { enviroment } from '../enviroment';
 import { Blog } from '../model/blog';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class SharedService {
   private http = inject(HttpClient);
   private afs = inject(AngularFirestore);
+  toastrService = inject(ToastrService);
 
   imageURL = '';
   // constructor(private afs: A) {}
@@ -31,18 +33,27 @@ export class SharedService {
   }
 
   public async getBlogs() {
+    let result: any[] | undefined;
     try {
       const resp = await this.afs.collection('/blogs').get().toPromise();
-      console.log(resp);
+      result = resp?.docs;
     } catch (e) {
       console.log(e);
     }
+
+    return result ? result.map((doc) => doc.data()) : [];
   }
 
   public async addBlog(blog: Blog) {
     try {
       blog.id = this.afs.createId();
+      blog.date = new Date().getTime();
+
       await this.afs.collection('/blogs').add(blog);
+
+      this.toastrService.success(
+        "Congrats! You've just created a new blog!🚀✨"
+      );
     } catch (e) {
       console.log(e);
     }

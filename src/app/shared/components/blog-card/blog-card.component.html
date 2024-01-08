@@ -1,13 +1,15 @@
 <a class="card border-0 text-decoration-none" role="link">
   <div class="card-header border-0 bg-transparent">
-    <img src="assets/img/1.png" class="rounded" />
+    <img [src]="cover" class="rounded" />
   </div>
   <div class="card-body">
-    <p>Don't miss a single match this season. Whether it's an away</p>
+    <p>{{ title }}</p>
   </div>
   <div class="card-footer border-0 bg-transparent mt-0 py-0">
     <div class="d-flex justify-content-between">
-      <p class="text-muted">By <span>John Stones</span></p>
+      <p class="text-muted">
+        By <span>{{ author }}</span>
+      </p>
       <p>1hr ago</p>
     </div>
   </div>
