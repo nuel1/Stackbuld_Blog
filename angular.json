@@ -16,7 +16,11 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
-          "allowedCommonJsDependencies": ["lodash"],
+          "allowedCommonJsDependencies": [
+            "@firebase/auth-compat",
+            "@firebase/auth",
+            "@firebase/firestore"
+          ],
           "options": {
             "outputPath": "dist/project-blog",
             "index": "src/index.html",
