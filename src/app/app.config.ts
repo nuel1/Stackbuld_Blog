@@ -23,9 +23,11 @@ import { getPerformance, providePerformance } from '@angular/fire/performance';
 import { enviroment } from './enviroment';
 import { provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideHttpClient(withFetch()),
     provideAnimations(),
     provideToastr(),
     provideRouter(routes),

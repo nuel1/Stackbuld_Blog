@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 
 import { SharedService } from './shared.service';
 import { HeaderComponent } from './ui/header/header.component';
@@ -34,7 +33,6 @@ import { LoaderComponent } from './components/loader/loader.component';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,
     AngularEditorModule,
     TimeagoModule.forChild(),
   ],
