@@ -20,6 +20,7 @@ export class BlogFormComponent implements OnChanges {
   formBuilder = inject(FormBuilder);
 
   @Input() uploadedImageURL = '';
+  @Input() loading = false;
   @Output() onUploadFile: EventEmitter<File> = new EventEmitter();
   @Output() onRemoveCover: EventEmitter<string> = new EventEmitter();
   @Output() onSubmit: EventEmitter<Blog> = new EventEmitter();

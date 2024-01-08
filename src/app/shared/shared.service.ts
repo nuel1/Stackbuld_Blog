@@ -47,7 +47,7 @@ export class SharedService {
   public async addBlog(blog: Blog) {
     try {
       blog.id = this.afs.createId();
-      blog.date = new Date().getTime();
+      blog.time = new Date().getTime();
 
       await this.afs.collection('/blogs').add(blog);
 

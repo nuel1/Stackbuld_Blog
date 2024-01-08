@@ -15,7 +15,8 @@ import { DeleteModalComponent } from './components/modal/delete-modal/delete-mod
 import { SmallModalComponent } from './components/modal/small-modal/small-modal.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { enviroment } from '../enviroment';
-import { NotificationComponent } from './components/notification/notification.component';
+import { TimeagoModule } from 'ngx-timeago';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NotificationComponent } from './components/notification/notification.co
     SearchComponent,
     DeleteModalComponent,
     SmallModalComponent,
+    LoaderComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,7 @@ import { NotificationComponent } from './components/notification/notification.co
     FormsModule,
     HttpClientModule,
     AngularEditorModule,
+    TimeagoModule.forChild(),
   ],
   providers: [
     SharedService,
@@ -48,6 +51,7 @@ import { NotificationComponent } from './components/notification/notification.co
     SearchComponent,
     DeleteModalComponent,
     SmallModalComponent,
+    LoaderComponent,
   ],
 })
 export class SharedModule {}

@@ -107,7 +107,8 @@
         "
         (click)="submit()"
       >
-        Create Blog
+        <div class="spinner-border" role="status" *ngIf="loading"></div>
+        &nbsp; Create Blog
       </button>
     </div>
   </div>

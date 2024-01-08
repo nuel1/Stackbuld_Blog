@@ -12,10 +12,12 @@ export class BlogsComponent implements OnInit {
 
   fabOpen = false;
   blogs: Blog[] = [];
+  loading = false;
 
   async ngOnInit() {
+    this.loading = true;
     this.blogs = await this.sharedService.getBlogs();
-    console.log(this.blogs);
+    this.loading = false;
   }
 
   async addBlog(blog: Blog) {

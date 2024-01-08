@@ -9,4 +9,5 @@ export class BlogCardComponent {
   @Input({ required: true }) cover = '';
   @Input({ required: true }) title = '';
   @Input({ required: true }) author = '';
+  @Input({ required: true }) time: number | string = 0;
 }

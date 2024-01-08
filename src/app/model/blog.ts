@@ -4,5 +4,5 @@ export interface Blog {
   title: string;
   author: string;
   content: string;
-  date: string | number;
+  time: string | number;
 }

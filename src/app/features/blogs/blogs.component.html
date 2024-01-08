@@ -9,19 +9,21 @@
     <div class="d-flex mt-5 flex-wrap gap-4 justify-content-center">
       <ng-container *ngIf="blogs.length">
         <blog-card
-          routerLink="/blogs/kfj"
           *ngFor="let blog of blogs| paginate: { 
                                                       itemsPerPage: 3,
                                                       currentPage: 1,}"
+          [routerLink]="'/blogs' + blog.id"
           [cover]="blog.cover"
           [title]="blog.title"
           [author]="blog.author"
+          [time]="blog.time"
         ></blog-card>
       </ng-container>
     </div>
-    <h3 class="text-center text-muted mt-3" *ngIf="!blogs.length">
+    <h3 class="text-center text-muted mt-3" *ngIf="!blogs.length && !loading">
       No blog created yet
     </h3>
+    <loader *ngIf="loading"></loader>
     <div class="d-flex justify-content-center mt-3">
       <pagination-controls
         class="custom-ngx-pagination"
@@ -112,6 +114,7 @@
     <blog-form
       body
       [uploadedImageURL]="sharedService.imageURL"
+      [loading]="loading"
       (onUploadFile)="sharedService.uploadFile($event)"
       (onRemoveCover)="sharedService.imageURL = $event"
       (onSubmit)="addBlog($event)"
