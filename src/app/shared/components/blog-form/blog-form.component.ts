@@ -67,8 +67,10 @@ export class BlogFormComponent implements OnChanges {
   };
 
   ngOnChanges(changes: SimpleChanges): void {
-    const url = changes['uploadedImageURL'].currentValue;
-    this.form.controls.cover.setValue(url);
+    if (changes['uploadedImageURL']) {
+      const url = changes['uploadedImageURL'].currentValue;
+      this.form.controls.cover.setValue(url);
+    }
   }
 
   getUploadedFile(e: Event) {
