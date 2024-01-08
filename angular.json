@@ -15,8 +15,8 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "allowedCommonJsDependencies": ["lodash"],
           "builder": "@angular-devkit/build-angular:application",
+          "allowedCommonJsDependencies": ["lodash"],
           "options": {
             "outputPath": "dist/project-blog",
             "index": "src/index.html",
