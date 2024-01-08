@@ -17,9 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "allowedCommonJsDependencies": [
-            "@firebase/auth-compat",
-            "@firebase/auth",
-            "@firebase/firestore"
+            "undici",
+            "@grpc/grpc-js",
+            "@grpc/proto-loader"
           ],
           "options": {
             "outputPath": "dist/project-blog",
